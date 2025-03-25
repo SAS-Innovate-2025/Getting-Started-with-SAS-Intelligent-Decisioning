@@ -1,0 +1,14 @@
+ruleset_id,ruleset_nm,folder_path,ruleset_desc,rule_id,rule_nm,rule_desc,rule_seq_no,conditional,record_rule_fired_flag,datatype,lhs_term,expression,expression_type,expression_order
+361621e1-b73b-4699-8071-bf95c3073925,Credit_Score_Check,/Public/SID Workshop,,f1eaa746-6278-45a5-9d37-d0d9d3b2cc15,Approve High Credit Scores,,1,if,N,decimal,CREDIT_SCORE,"> 650",CONDITION,1
+361621e1-b73b-4699-8071-bf95c3073925,Credit_Score_Check,/Public/SID Workshop,,f1eaa746-6278-45a5-9d37-d0d9d3b2cc15,Approve High Credit Scores,,1,if,N,,,"LOAN < INCOME ",CONDITION,2
+361621e1-b73b-4699-8071-bf95c3073925,Credit_Score_Check,/Public/SID Workshop,,f1eaa746-6278-45a5-9d37-d0d9d3b2cc15,Approve High Credit Scores,,1,if,N,string,STATUS,"'APPROVED'",ACTION,1
+361621e1-b73b-4699-8071-bf95c3073925,Credit_Score_Check,/Public/SID Workshop,,f1eaa746-6278-45a5-9d37-d0d9d3b2cc15,Approve High Credit Scores,,1,if,N,,,"OFFER_RATE = Rate_Low",ACTION,2
+361621e1-b73b-4699-8071-bf95c3073925,Credit_Score_Check,/Public/SID Workshop,,f1eaa746-6278-45a5-9d37-d0d9d3b2cc15,Approve High Credit Scores,,1,if,N,string,JUSTIFICATION,"'APPROVED BASED ON CREDIT SCORE'",ACTION,3
+361621e1-b73b-4699-8071-bf95c3073925,Credit_Score_Check,/Public/SID Workshop,,aff0b3fb-05cc-4013-9611-f06832e5a7d7,Approve Mid-Level Credit Scores Else Deny Loan,,2,if,N,,,"CREDIT_SCORE >= 525 AND CREDIT_SCORE <= 650",CONDITION,1
+361621e1-b73b-4699-8071-bf95c3073925,Credit_Score_Check,/Public/SID Workshop,,aff0b3fb-05cc-4013-9611-f06832e5a7d7,Approve Mid-Level Credit Scores Else Deny Loan,,2,if,N,,,"LOAN < 0.7 * INCOME ",CONDITION,2
+361621e1-b73b-4699-8071-bf95c3073925,Credit_Score_Check,/Public/SID Workshop,,aff0b3fb-05cc-4013-9611-f06832e5a7d7,Approve Mid-Level Credit Scores Else Deny Loan,,2,if,N,string,STATUS,"'APPROVED'",ACTION,1
+361621e1-b73b-4699-8071-bf95c3073925,Credit_Score_Check,/Public/SID Workshop,,aff0b3fb-05cc-4013-9611-f06832e5a7d7,Approve Mid-Level Credit Scores Else Deny Loan,,2,if,N,string,JUSTIFICATION,"'APPROVED BASED ON CREDIT SCORE'",ACTION,2
+361621e1-b73b-4699-8071-bf95c3073925,Credit_Score_Check,/Public/SID Workshop,,aff0b3fb-05cc-4013-9611-f06832e5a7d7,Approve Mid-Level Credit Scores Else Deny Loan,,2,if,N,,,"OFFER_RATE = Rate_High",ACTION,3
+361621e1-b73b-4699-8071-bf95c3073925,Credit_Score_Check,/Public/SID Workshop,,10ae091d-9d8c-4605-8ce0-148ec47d247a,Default_rule_1,,3,elseif,Y,string,STATUS,"^= 'APPROVED'",CONDITION,1
+361621e1-b73b-4699-8071-bf95c3073925,Credit_Score_Check,/Public/SID Workshop,,10ae091d-9d8c-4605-8ce0-148ec47d247a,Default_rule_1,,3,elseif,Y,string,STATUS,"'DENIED'",ACTION,1
+361621e1-b73b-4699-8071-bf95c3073925,Credit_Score_Check,/Public/SID Workshop,,10ae091d-9d8c-4605-8ce0-148ec47d247a,Default_rule_1,,3,elseif,Y,string,JUSTIFICATION,"'DENIED BASED ON CREDIT SCORE AND/OR LOAN AMOUNT'",ACTION,2

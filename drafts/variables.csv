@@ -1,0 +1,7 @@
+name,dataGridName,dataType,direction,length,generateDataGridColumns,description,defaultValue,dataGridMaxRowCount,autoPopulate
+CREDIT_SCORE,,decimal,inOut,8,false,,,,
+INCOME,,decimal,inOut,8,false,,,,
+JUSTIFICATION,,string,output,50,false,"Justification for Loan Approval Status","UNDER REVIEW",,
+LOAN,,decimal,inOut,,false,,,,
+OFFER_RATE,,decimal,output,,false,"Interest Rate to Offer with Loan Approval",,,
+STATUS,,string,inOut,8,false,"Loan Approval Status",,,
