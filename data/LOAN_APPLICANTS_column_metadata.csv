@@ -1,0 +1,13 @@
+Name,SASColumnType,ReadFlag,Desc,SASFormat,SASInformat
+REQID,N,Y,"Loan request ID",BEST12.,BEST32.
+CLIENTID,C,Y,"ID for client who requested loan",$13.,$13.
+LOAN,N,Y,"Loan amount requested in USD",BEST12.,BEST32.
+BAD,N,Y,"Defaulted or seriously delinquent account (1=Yes, 0=No)",BEST12.,BEST32.
+DEROG,N,Y,"Number of derogatory reports",BEST12.,BEST32.
+DELINQ,N,Y,"Number of delinquent credit lines",BEST12.,BEST32.
+CLAGE,N,Y,"Age of oldest credit line in months",BEST12.,BEST32.
+NINQ,N,Y,"Number of recent credit inquiries",BEST12.,BEST32.
+DEBTINC,N,Y,"Debt to income ratio percentage",BEST12.,BEST32.
+REASON,C,Y,"Reason for loan request",$18.,$18.
+INCOME,N,Y,"Client's yearly income in USD",BEST12.,BEST32.
+CREDIT_SCORE,N,Y,"Client's credit score",BEST12.,BEST32.
