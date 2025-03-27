@@ -54,7 +54,7 @@ Select **No** when prompted about accepting *Admin* privileges.
     * Description: **Initial Loan Review Assignment Rule**
     * Location: **/Public/SID Workshop**
 
-        > &#9755; Select ![Folder icon](img/FolderIcon.png) to navigate to *SAS Content/Public*, then select ![New](img/New.png) **&#10132; Folder** to create a new folder named *SID Workshop*.
+        > &#9755; Select ![Folder icon](img/FolderIcon.png) to navigate to *SAS Content/Public*, then select ![New](img/New.png) **&#10132; Folder** to create a new folder named *SID Workshop* if the workshop folder does not already exist.
 
         ![Initial_Loan_Review settings](img/Initial_Loan_ReviewSettings.png)
 
@@ -121,7 +121,7 @@ Select **No** when prompted about accepting *Admin* privileges.
 
 1. Name the rule **Automatic Loan Denial or Approval**.
 
-   > &#9755; Select ![More options](img/MoreOptions.png) **&#10132; edit rule information**.
+   > &#9755; Select ![More options](img/MoreOptions.png) **&#10132; Edit rule information**.
 
 1. Select the following for the rule:<br>
    **IF BAD = 1**<br>
@@ -135,31 +135,15 @@ Select **No** when prompted about accepting *Admin* privileges.
 1. Click ![Save button](img/SaveButton.png) to save the rule set.
 1. Click **+ Add Rule** to add a new rule block.
 1. Use the drop-down menu to change the **IF** to an **OR** to add an *OR* condition to the existing rule block.
-1. Select ![Pencil icon](img/PencilIcon.png) to edit the added statement in the complex rule editor.
-1. In the *Expression Editor*, click **Clear** to clear the current expression.
+1. Select the following for the *OR* condition:<br>
+   **OR DEBTINC > 50.0** <br>
+   **AND DEROG >= 2**
 
-   ![Clear Syntax](img/ClearSyntax.png)
+     > &#9755; Hover over the *OR* statement to surface statement options, then click ![Add/Plus](img/AddPlus.png) to add the *AND* statement.
 
-1. In the *Variables* tab, double-click **DEBTINC** to add it to the expression.
-1. In the *Operators* section, click **>** to add it the expression.
-1. In the expression section, type **50.0**.
-1. In the *Operators* section, click **AND** to add it the expression.
-1. In the *Variables* tab, double-click **DEROG** to add it to the expression.
-1. In the *Operators* section, click **>**, then **=** to add both operators to the expression.
-
-    > &#9755; Delete the space between the operators before proceeding.
-
-1. In the expression section, type **2**.
-1. Click **Verify syntax** to validate the expression logic.
-
-   ![Expression editor](img/ExpressionEditor.png)
-
-1. Click **Save** to save the expression code and close the *Expression Editor*.
-1. Click ![Save button](img/SaveButton.png) to save the rule set.
 
    ![Initial loan review - add offer rate](img/InitialLoanReview3.png)
 
-1. Click ![Save button](img/SaveButton.png) to save the rule set.
 1. Click **+ Add Rule** to add a new rule block.
 1. Change the **IF** to an **ELSE** to add an *ELSE IF* condition to the existing rule block.
 1. Select the following for the *ELSE* condition: <br>
@@ -167,20 +151,21 @@ Select **No** when prompted about accepting *Admin* privileges.
    **AND LOAN <= 15000** <br>
    **AND DEBTINC < 10.0** <br>
    **THEN ASSIGN STATUS 'APPROVED'** <br>
-    **&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ASSIGN JUSTIFICATION 'AUTOMATIC APPROVAL CRITERIA MET'**
-    **&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ASSIGN OFFER_RATE 2.75**
+   **&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ASSIGN JUSTIFICATION 'AUTOMATIC APPROVAL CRITERIA MET'** <br>
+   **&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ASSIGN OFFER_RATE 2.75**
 
    > &#9755; Click ![Add/Plus](img/AddPlus.png) to add the *AND* statements and additional *ASSIGN* statements.
 
    ![Initial loan review - automatic approval](img/InitialLoanReview4.png)
 
+1. Click ![Save button](img/SaveButton.png) to save the rule set.
 1. To test the rule set, select the **Scoring** tab.
 1. On the **Tests** sub-tab, click **New Test**.
 1. Enter the following information:
    * Name: **Initial_Loan_Review_Test**
    * Description: **Test 1**
    * Location: **/Public/SID Workshop/Tests**
-      > &#9755; Select ![Folder icon](img/FolderIcon.png) to navigate to *SAS Content/SID Workshop*, then select ![New](img/New.png) **&#10132; Folder** to create a new folder named *Tests*.
+      > &#9755; Select ![Folder icon](img/FolderIcon.png) to navigate to *SAS Content/SID Workshop*, then select ![New](img/New.png) **&#10132; Folder** to create a new folder named *Tests* if the test folder does not exist already.
    * Input table: **LOAN_APPLICANTS**.
 
    ![Test rule set](img/TestRuleSet.png)
@@ -192,7 +177,7 @@ Select **No** when prompted about accepting *Admin* privileges.
 1. Click **OK** to close the *Variable Mappings* dialog.
 1. Click **Save** to save this test to the rule set.
 
-     > &#9998; If do not select **Save** and simply select **Run**, then the test is run; however, the test is not saved to the rule set and if your session is closed you will need to setup the test again to run it in the future.
+     > &#9998; If you do not select **Save** and simply select **Run**, then the test is run; however, the test is not saved to the rule set and if your session is closed, you will need to set up the test again to run it in the future.
 
 1. Check the newly created test and click **Run** to run the specified test.
 
@@ -264,9 +249,7 @@ Select **No** when prompted about accepting *Admin* privileges.
 
      ![DS2 Code Variables](img/DS2CodeVars.png)
 
-1. Click **x** to close the DS2 Code file.
-
-1. To test the rule set, select the **Scoring** tab.
+1. To test the code file, select the **Scoring** tab.
 1. On the **Tests** sub-tab, click **New Test**.
 1. Enter the following information:
    * Name: **Additional_Review_Test**
@@ -289,7 +272,7 @@ Select **No** when prompted about accepting *Admin* privileges.
    ![Fix variable mappings](img/FixVarMaps.png)
 
 1. Click **OK** to close the *Variable Mappings* dialog.
-1. Click **Save** to save this test to the rule set.
+1. Click **Save** to save this test to the code file.
 1. Check the newly created test and click **Run** to run the specified test.
 
      ![Select test](img/SelectTest.png)
@@ -301,7 +284,7 @@ Select **No** when prompted about accepting *Admin* privileges.
 
    ![DS2 test output](img/DS2TestOutput.png)
 
-1. Click **x** to close the test results and the rule set.
+1. Click **x** to close the test results and the code file.
 
 ## Create and Test a Decision
 
@@ -336,7 +319,7 @@ Select **No** when prompted about accepting *Admin* privileges.
 
 1. Click **Add** to add all the missing variables to the decision.
 1. Click ![Save button](img/SaveButton.png) to save the decision.
-1. Select the **Variables** tab.
+1. Select the **Variables** tab to review the added variables.
 
      ![Decision variables](img/DecisionVars.png)
 
@@ -352,7 +335,7 @@ Select **No** when prompted about accepting *Admin* privileges.
 1. Click **OK** to create the branch.
 1. In the *Properties* section, select the **STATUS** variable for the *Branch expression*.
 
-     > &#9755; Select **More...** to view the full listing of variables in the *Branch expression* drop-down and click **OK**.
+     > &#9755; Select the drop-down menu under *Branch expression* to view the full list of variables.
 
 1. Click ![Add/Plus](img/AddPlus.png) to add the following *paths*:
    * **"REVIEW"**
